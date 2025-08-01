@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Converter - Convert Images to JPG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Photo Converter</h1>
+            <p>Convert any image format to JPG</p>
+        </header>
+
+        <main>
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <div class="upload-icon">📸</div>
+                        <h3>Drag & Drop Images Here</h3>
+                        <p>or click to select files</p>
+                        <input type="file" id="fileInput" multiple accept="image/*" hidden>
+                        <button type="button" id="selectBtn" class="select-btn">Select Images</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Controls Section -->
+            <section class="controls-section" id="controlsSection" style="display: none;">
+                <div class="quality-control">
+                    <label for="qualitySlider">JPG Quality: <span id="qualityValue">90</span>%</label>
+                    <input type="range" id="qualitySlider" min="10" max="100" value="90">
+                </div>
+                <div class="action-buttons">
+                    <button id="convertBtn" class="convert-btn">Convert All to JPG</button>
+                    <button id="downloadBtn" class="download-btn" style="display: none;">Download Converted</button>
+                    <button id="clearBtn" class="clear-btn">Clear All</button>
+                </div>
+            </section>
+
+            <!-- Preview Section -->
+            <section class="preview-section" id="previewSection" style="display: none;">
+                <h3>Selected Images</h3>
+                <div class="image-grid" id="imageGrid"></div>
+            </section>
+
+            <!-- Progress Section -->
+            <section class="progress-section" id="progressSection" style="display: none;">
+                <h3>Converting Images...</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p id="progressText">0 of 0 images converted</p>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <h3>Conversion Complete!</h3>
+                <div class="results-grid" id="resultsGrid"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Photo Converter - Built with HTML5 Canvas</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
